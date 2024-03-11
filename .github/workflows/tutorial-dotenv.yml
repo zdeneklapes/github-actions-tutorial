@@ -1,0 +1,25 @@
+name: tutorial-dotenv
+
+
+on:
+  push:
+    branches:
+      - "main"
+  workflow_dispatch:
+
+jobs:
+  download-env-file-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: zdeneklapes/dotenv-vault-action@v1
+        with:
+          dotenvMe: ${{ secrets.DOTENV_ME }}
+          stage: "development"
+          move: false # if true: mv .env.${STATE} .env (example: mv .env.development .env)
+      - run: ls -la
+      - run: |
+          source .env
+          echo $HELLO
+      - run: |
+          echo $HELLO

@@ -1,0 +1,15 @@
+.idea/
+.git/
+others/
+cmake-build-debug/
+build/
+tmp/
+
+.DS_Store
+pms
+numbers
+
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
