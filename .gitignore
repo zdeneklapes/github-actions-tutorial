@@ -13,3 +13,4 @@ numbers
 .flaskenv*
 !.env.project
 !.env.vault
+tags
